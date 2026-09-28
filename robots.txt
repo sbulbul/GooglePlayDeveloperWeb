@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /apps/_template/
+Sitemap: https://www.palindromic.ca/sitemap.xml
