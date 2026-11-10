@@ -1,15 +1,15 @@
 /* Self-hosted (SIL OFL) so the site makes no third-party requests */
-@font-face{font-family:"Bricolage Grotesque";src:url("../fonts/bricolage-grotesque.woff2") format("woff2");font-weight:500 800;font-display:swap}
+@font-face{font-family:"Plus Jakarta Sans";src:url("../fonts/plus-jakarta-sans.woff2") format("woff2");font-weight:200 800;font-display:swap}
 
 /* Pine and mint. All text/background pairs are WCAG AA. */
-:root{--bg:#f4f7f5;--surface:#fff;--text:#10201e;--muted:#51605d;--border:#d5dedb;--accent:#0f766e;--accent-ink:#fff;--band:#0b302c;--shadow:0 1px 2px #0b302c14,0 12px 28px -12px #0b302c33;--display:"Bricolage Grotesque",system-ui,sans-serif;color-scheme:light dark}
+:root{--bg:#f4f7f5;--surface:#fff;--text:#10201e;--muted:#51605d;--border:#d5dedb;--accent:#0f766e;--accent-ink:#fff;--band:#0b302c;--shadow:0 1px 2px #0b302c14,0 12px 28px -12px #0b302c33;--display:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color-scheme:light dark}
 @media (prefers-color-scheme:dark){:root{--bg:#0c1513;--surface:#132220;--text:#e6efec;--muted:#9db0ab;--border:#24403b;--accent:#3fd0bd;--accent-ink:#06201d;--band:#0f2b27;--shadow:none}}
 
 /* Dark pine bands (header, hero, CTA, footer) remap the tokens so everything inside just works */
 .site-header,.hero,.cta,.site-footer{--bg:var(--band);--text:#eef6f3;--muted:#a9c4be;--accent:#5eead4;--accent-ink:#06201d;--border:#ffffff24;background:var(--bg);color:var(--text)}
 
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--text);font:1.0625rem/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--text);font:1.0625rem/1.65 var(--display);-webkit-font-smoothing:antialiased}
 .container{width:100%;max-width:64rem;margin:0 auto;padding:0 1.25rem}
 /* main.container: must outrank .container, whose padding shorthand would zero the block padding */
 main.container{flex:1;padding-block:3rem 5rem}
@@ -37,7 +37,7 @@ h3{margin:0 0 .4rem;font-size:1.2rem;line-height:1.25;font-weight:700;letter-spa
 .hero{margin-top:-3rem;padding-block:4.5rem 5rem;border-image:conic-gradient(var(--bg) 0 0) fill 0/0/0 100vmax}
 .hero h1{width:fit-content;font-size:clamp(2.8rem,12vw,8.5rem);line-height:.86;letter-spacing:-.025em;margin-bottom:2.5rem}
 /* Reflection, home only. The mask is written upside down because scaleY flips it with the text. */
-.hero h1[data-mirror]::after{content:attr(data-mirror);content:attr(data-mirror) / "";display:block;margin-top:-.12em;transform:scaleY(-1);color:transparent;-webkit-text-stroke:max(1px,.012em) var(--accent);-webkit-mask-image:linear-gradient(transparent 20%,#000);mask-image:linear-gradient(transparent 20%,#000)}
+.hero h1[data-mirror]::after{content:attr(data-mirror);content:attr(data-mirror) / "";display:block;margin-top:-.02em;transform:scaleY(-1);color:transparent;-webkit-text-stroke:max(1px,.012em) var(--accent);-webkit-mask-image:linear-gradient(transparent 20%,#000);mask-image:linear-gradient(transparent 20%,#000)}
 @media (prefers-reduced-motion:no-preference){.hero h1[data-mirror]::after{animation:mirror .9s .25s ease-out backwards}}
 @keyframes mirror{from{opacity:0}}
 .hero p{max-width:38rem}
