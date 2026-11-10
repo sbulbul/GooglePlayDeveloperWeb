@@ -34,10 +34,10 @@ h3{margin:0 0 .4rem;font-size:1.2rem;line-height:1.25;font-weight:700;letter-spa
 .lead{font-size:1.35rem;line-height:1.45}
 
 /* Hero: full-bleed pine band; the wordmark sits above its own mirror image */
-.hero{margin-top:-3rem;padding-block:4.5rem 5rem;box-shadow:0 0 0 100vmax var(--bg);clip-path:inset(0 -100vmax)}
+.hero{margin-top:-3rem;padding-block:4.5rem 5rem;border-image:conic-gradient(var(--bg) 0 0) fill 0/0/0 100vmax}
 .hero h1{width:fit-content;font-size:clamp(2.8rem,12vw,8.5rem);line-height:.86;letter-spacing:-.025em;margin-bottom:2.5rem}
 /* Reflection, home only. The mask is written upside down because scaleY flips it with the text. */
-.hero h1[data-mirror]::after{content:attr(data-mirror);content:attr(data-mirror) / "";display:block;margin-top:-.12em;transform:scaleY(-1);color:transparent;-webkit-text-stroke:1.5px var(--accent);-webkit-mask-image:linear-gradient(transparent 20%,#000);mask-image:linear-gradient(transparent 20%,#000)}
+.hero h1[data-mirror]::after{content:attr(data-mirror);content:attr(data-mirror) / "";display:block;margin-top:-.12em;transform:scaleY(-1);color:transparent;-webkit-text-stroke:max(1px,.012em) var(--accent);-webkit-mask-image:linear-gradient(transparent 20%,#000);mask-image:linear-gradient(transparent 20%,#000)}
 @media (prefers-reduced-motion:no-preference){.hero h1[data-mirror]::after{animation:mirror .9s .25s ease-out backwards}}
 @keyframes mirror{from{opacity:0}}
 .hero p{max-width:38rem}
